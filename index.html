@@ -3,38 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Sandipa 🌸</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>For Sandipa, With Love 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Great+Vibes&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   RESET & ROOT
-============================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --rose:#e8668a;--deep-rose:#c0395e;--blush:#f9c4d2;
-  --gold:#f0c060;--deep-gold:#c8942a;--lavender:#c9a7eb;
-  --deep-purple:#7b3fa0;--midnight:#06020f;
-  --surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.1);
+  --crimson:#8b1a2e;
+  --rose:#c0395e;
+  --blush:#f2a0b8;
+  --petal:#fde8ee;
+  --gold:#d4a843;
+  --warm-gold:#f0c87a;
+  --velvet:#2a0a14;
+  --deep:#0f0308;
+  --wine:#3d0a1a;
+  --cream:#fef5e7;
 }
-html,body{width:100%;height:100%;overflow:hidden;background:var(--midnight);font-family:'Quicksand',sans-serif;cursor:none;-webkit-font-smoothing:antialiased}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-family:'Lato',sans-serif;cursor:none;-webkit-font-smoothing:antialiased}
 
-/* ============================================================
-   CURSOR
-============================================================ */
-#cursor{position:fixed;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd6e8,#e8668a);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 14px #e8668a,0 0 30px #c0395e66;mix-blend-mode:screen;transition:transform .12s}
-#cursor.clicking{transform:translate(-50%,-50%) scale(.7)}
-#cursor-ring{position:fixed;width:38px;height:38px;border-radius:50%;border:1.5px solid #e8668a66;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left .08s,top .08s}
-.sparkle{position:fixed;pointer-events:none;z-index:99997;border-radius:50%;transform:translate(-50%,-50%);animation:sparkleFade .7s ease forwards}
-@keyframes sparkleFade{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-60px) scale(0)}}
+/* ── CURSOR ── */
+#cur{position:fixed;width:12px;height:12px;border-radius:50%;background:var(--blush);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--rose),0 0 24px #c0395e66;transition:transform .1s}
+#cur.c{transform:translate(-50%,-50%) scale(.6)}
+#cur-ring{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(192,57,94,.5);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left .1s,top .1s}
+.sp{position:fixed;pointer-events:none;z-index:99997;border-radius:50%;transform:translate(-50%,-50%);animation:spFade .8s ease forwards}
+@keyframes spFade{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-70px) scale(0)}}
 
-/* ============================================================
-   PROGRESS BAR
-============================================================ */
-#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--deep-rose),var(--rose),var(--gold),var(--lavender));z-index:9999;transition:width .75s cubic-bezier(.25,1,.5,1);box-shadow:0 0 12px var(--rose)}
+/* ── PROGRESS ── */
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--crimson),var(--rose),var(--gold));z-index:9999;transition:width .8s cubic-bezier(.25,1,.5,1);box-shadow:0 0 8px var(--rose)}
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
+/* ── CANDLE FLICKER AMBIENT ── */
+#candle-ambient{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 50% 100%,rgba(212,168,67,.06) 0%,transparent 65%);animation:candleFlicker 4s ease-in-out infinite alternate}
+@keyframes candleFlicker{0%{opacity:.6}25%{opacity:1}50%{opacity:.7}75%{opacity:.95}100%{opacity:.8}}
+
+/* ── ROSE PETALS GLOBAL ── */
+#petals-global{position:fixed;inset:0;pointer-events:none;z-index:500;overflow:hidden}
+.rp{position:absolute;animation:petalFall linear infinite;opacity:0}
+@keyframes petalFall{
+  0%  {transform:translateY(-20px) rotate(0deg) translateX(0);opacity:0}
+  5%  {opacity:.7}
+  85% {opacity:.6}
+  100%{transform:translateY(102vh) rotate(520deg) translateX(40px);opacity:0}
+}
+
+/* ── HEART BURST ── */
+.hburst{position:fixed;inset:0;pointer-events:none;z-index:502}
+.hbp{position:absolute;animation:hbpFly .85s ease forwards}
+@keyframes hbpFly{0%{opacity:1;transform:translate(0,0) scale(.3)}100%{opacity:0;transform:var(--v) scale(1.1)}}
+
+/* ── VIGNETTE ── */
+#vignette{position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(10,2,8,.65) 100%)}
+
+/* ── PAGES ── */
+.page{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;opacity:0;pointer-events:none;transform:scale(1.04) translateY(8px);transition:opacity .9s cubic-bezier(.25,1,.5,1),transform .9s cubic-bezier(.25,1,.5,1);z-index:10}
+.page.active{opacity:1;pointer-events:all;transform:scale(1) translateY(0)}
+.page.exit{opacity:0;transform:scale(.97) translateY(-8px);transition:opacity .6s,transform .6s}
+#nav-dots,#nav-dots *{display:none!important}
+
+/* ── SHARED CONTENT ── */
+.ch-tag{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;opacity:.8}
+.ch-tag::before,.ch-tag::after{content:'  ✦  '}
+
+/* ── NEXT BTN ── */
+.nbtn{position:absolute;bottom:52px;background:linear-gradient(135deg,var(--crimson),var(--wine));color:var(--petal);border:1px solid rgba(212,168,67,.3);border-radius:60px;padding:13px 42px;font-family:'Cinzel',serif;font-size:11px;font-weight:400;letter-spacing:3px;cursor:pointer;z-index:100;box-shadow:0 4px 24px rgba(139,26,46,.6),inset 0 1px 0 rgba(255,255,255,.08);transition:all .35s cubic-bezier(.34,1.56,.64,1);text-transform:uppercase}
+.nbtn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 36px rgba(192,57,94,.55),inset 0 1px 0 rgba(255,255,255,.15);border-color:rgba(212,168,67,.6)}
+.nbtn:active{transform:scale(.97)}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shimGold{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes gradFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.1)}60%{transform:scale(1)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(192,57,94,.3)}50%{box-shadow:0 0 40px rgba(192,57,94,.7),0 0 80px rgba(192,57,94,.3)}}
+@keyframes emojiDrift{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+@keyframes roseSpinIn{0%{transform:rotate(-30deg) scale(0);opacity:0}100%{transform:rotate(0deg) scale(1);opacity:1}}
+@keyframes loadPulse{0%,100%{opacity:.4;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes loadBar{0%{width:0}100%{width:100%}}
+@keyframes quoteReveal{0%{clip-path:inset(0 100% 0 0);opacity:0}20%{opacity:1}100%{clip-path:inset(0 0% 0 0)}}
+@keyframes spineGrow{0%{transform:scaleY(0)}100%{transform:scaleY(1)}}
+@keyframes nodeGlow{0%,100%{box-shadow:0 0 10px rgba(192,57,94,.5)}50%{box-shadow:0 0 26px rgba(192,57,94,1),0 0 50px rgba(192,57,94,.4)}}
+@keyframes lockShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+@keyframes revealBurst{0%{opacity:0;transform:scale(.6) rotate(-8deg);filter:blur(10px)}70%{filter:blur(0)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes heartRainFall{0%{transform:translateY(-30px) rotate(0) scale(.8);opacity:0}6%{opacity:.85}88%{opacity:.75}100%{transform:translateY(105vh) rotate(380deg) scale(1.1);opacity:0}}
+@keyframes candleBurn{0%,100%{transform:scaleY(1) skewX(0)}30%{transform:scaleY(1.12) skewX(-2deg)}60%{transform:scaleY(.9) skewX(2deg)}80%{transform:scaleY(1.05) skewX(-1deg)}}
+@keyframes smokeRise{0%{transform:translate(-50%,0) scale(.3);opacity:.5}100%{transform:translate(-50%,-90px) scale(2.2);opacity:0}}
+@keyframes wishPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes fadeOut{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.92)}}
+@keyframes wrongShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 rgba(212,168,67,0)}50%{box-shadow:0 0 20px rgba(212,168,67,.4)}}
+
+/* ════════════════════════════════════════
+   LOADER
+════════════════════════════════════════ */
+#loader{position:fixed;inset:0;z-index:999999;background:radial-gradient(ellipse at 50% 60%,#1a0510,#06010a);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:opacity .9s ease}
+.ld-rose{font-size:52px;animation:roseSpinIn .8s cubic-bezier(.34,1.56,.64,1) .2s both}
+.ld-name{font-family:'Great Vibes',cursive;font-size:clamp(48px,9vw,80px);color:var(--blush);animation:loadPulse 1.6s ease infinite;margin-top:8px;text-shadow:0 0 30px rgba(240,160,184,.5)}
+.ld-bar-wrap{width:180px;height:1px;background:rgba(212,168,67,.2);border-radius:1px;margin-top:22px;overflow:hidden}
+.ld-bar{height:100%;background:linear-gradient(90deg,var(--crimson),var(--gold));animation:loadBar 2s ease forwards}
+.ld-txt{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:rgba(212,168,67,.45);margin-top:12px;text-transform:uppercase}
+
+/* ════════════════════════════════════════
+   PAGE 1 — OPENING
+════════════════════════════════════════ */
+#page1{background:radial-gradient(ellipse at 40% 45%,#1e0514,var(--deep) 70%)}
+#page1 canvas{position:absolute;inset:0;z-index:0}
+.p1-wrap{position:relative;z-index:10;text-align:center;padding:24px}
+.p1-top{font-family:'Cinzel',serif;font-size:10px;letter-spacing:7px;color:var(--gold);opacity:0;animation:fadeIn 1.2s .5s forwards;text-transform:uppercase}
+.p1-top::before,.p1-top::after{content:'  ─── '}
+.p1-h{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(50px,9.5vw,110px);color:#fff;line-height:.9;opacity:0;animation:fadeUp 1.1s .9s forwards;letter-spacing:-1px}
+.p1-h .it{font-style:italic;color:var(--warm-gold)}
+.p1-name{font-family:'Great Vibes',cursive;font-size:clamp(54px,10vw,108px);background:linear-gradient(135deg,var(--petal),var(--blush),#e87a9a,var(--petal));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:fadeUp 1.1s 1.3s forwards,gradFlow 5s 2.5s infinite;filter:drop-shadow(0 0 30px rgba(192,57,94,.45));margin-top:-6px}
+.p1-div{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px auto;opacity:0;animation:fadeIn 1s 1.9s forwards}
+.p1-sub{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:rgba(212,168,67,.55);opacity:0;animation:fadeIn 1s 2.2s forwards;text-transform:uppercase}
+.p1-arrow{display:block;font-size:18px;color:rgba(212,168,67,.4);margin-top:10px;animation:floatSlow 2.2s ease-in-out infinite}
+
+/* ════════════════════════════════════════
+   PAGE 2 — CANDLELIGHT QUOTE
+════════════════════════════════════════ */
+#page2{background:radial-gradient(ellipse at 50% 70%,#1e0a06,var(--deep) 70%)}
+.candles-scene{position:absolute;bottom:0;left:0;right:0;height:180px;pointer-events:none}
+.candle-group{position:absolute;bottom:20px;display:flex;gap:18px;align-items:flex-end}
+.candle-group.left{left:40px}.candle-group.right{right:40px}
+.candle{display:flex;flex-direction:column;align-items:center}
+.candle-flame{width:10px;height:22px;background:radial-gradient(ellipse at 50% 80%,#fff8d0,#ffc040,#ff6020);border-radius:50% 50% 30% 30%;animation:candleBurn .8s ease-in-out infinite;box-shadow:0 0 12px #ffc04088,0 0 28px #ff802044;position:relative}
+.candle-flame::after{content:'';position:absolute;top:25%;left:35%;width:30%;height:40%;background:rgba(255,255,255,.7);border-radius:50%;filter:blur(1px)}
+.candle-body{width:14px;height:var(--h,50px);background:linear-gradient(135deg,var(--petal),#e8c4c4);border-radius:3px 3px 2px 2px;margin-top:-2px;box-shadow:inset -2px 0 4px rgba(0,0,0,.15)}
+.candle-glow{position:absolute;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,64,.18),transparent 70%);top:-20px;left:50%;transform:translateX(-50%);animation:candleFlicker 1.2s ease-in-out infinite alternate}
+.p2-wrap{position:relative;z-index:10;text-align:center;padding:36px;max-width:700px}
+.p2-quote{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,4.8vw,54px);color:var(--cream);line-height:1.5;opacity:0;animation:quoteReveal 1.6s .4s forwards;font-style:italic}
+.p2-quote em{color:var(--blush);font-style:normal}
+.p2-attr{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:rgba(212,168,67,.55);margin-top:24px;opacity:0;animation:fadeIn 1s 1.6s forwards}
+.p2-body{font-size:14px;color:rgba(242,160,184,.6);margin-top:18px;line-height:1.9;opacity:0;animation:fadeUp 1s 1.2s forwards}
+.p2-body strong{color:var(--blush)}
+
+/* ════════════════════════════════════════
+   PAGE 3 — REASONS
+════════════════════════════════════════ */
+#page3{background:radial-gradient(ellipse at 30% 40%,#1a0510,var(--deep) 75%)}
+.p3-wrap{position:relative;z-index:10;text-align:center;padding:20px 24px;max-width:880px;width:100%}
+.p3-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(28px,4.5vw,52px);color:var(--cream);opacity:0;animation:fadeUp .9s .3s forwards}
+.p3-title strong{color:var(--blush);font-style:normal}
+.rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.rcard{background:linear-gradient(145deg,rgba(139,26,46,.18),rgba(61,10,26,.25));border:1px solid rgba(192,57,94,.18);border-radius:18px;padding:22px 14px;backdrop-filter:blur(12px);transition:all .4s cubic-bezier(.34,1.56,.64,1);cursor:default;position:relative;overflow:hidden;opacity:0;transform:translateY(18px) scale(.96)}
+.rcard.vis{opacity:1;transform:none}
+.rcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,57,94,.1),rgba(212,168,67,.05));opacity:0;transition:opacity .4s;border-radius:18px}
+.rcard:hover{transform:translateY(-7px) scale(1.03);border-color:rgba(192,57,94,.5);box-shadow:0 20px 44px rgba(139,26,46,.35),0 0 0 1px rgba(192,57,94,.2)}
+.rcard:hover::after{opacity:1}
+.ricon{font-size:32px;display:block;margin-bottom:10px;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.rcard:hover .ricon{transform:scale(1.28) rotate(-6deg)}
+.rtitle{font-family:'Great Vibes',cursive;font-size:22px;color:var(--blush);margin-bottom:6px}
+.rtext{font-size:12px;color:rgba(242,160,184,.6);line-height:1.7}
+
+/* ════════════════════════════════════════
+   PAGE 4 — TIMELINE
+════════════════════════════════════════ */
+#page4{background:radial-gradient(ellipse at 60% 50%,#180512,var(--deep) 70%)}
+.p4-wrap{position:relative;z-index:10;text-align:center;max-width:660px;width:100%;padding:28px}
+.p4-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(28px,4.5vw,52px);color:var(--cream);opacity:0;animation:fadeUp .9s .2s forwards}
+.p4-title strong{color:var(--blush);font-style:normal}
+.tl{margin-top:28px;position:relative;text-align:left}
+.tl-line{position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,var(--crimson),var(--rose),var(--gold));border-radius:1px;transform:scaleY(0);transform-origin:top;transition:transform 1.3s cubic-bezier(.25,1,.5,1) .3s}
+.tl-line.vis{transform:scaleY(1)}
+.tl-item{display:flex;gap:20px;align-items:flex-start;margin-bottom:22px;padding-left:4px;opacity:0;transform:translateX(-20px);transition:all .65s ease}
+.tl-item.vis{opacity:1;transform:translateX(0)}
+.tl-dot{width:13px;height:13px;border-radius:50%;flex-shrink:0;margin-top:5px;background:linear-gradient(135deg,var(--rose),var(--gold));animation:nodeGlow 2.5s ease infinite;position:relative;z-index:1}
+.tl-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(192,57,94,.3);animation:nodeGlow 2.5s ease infinite .4s}
+.tl-body{flex:1}
+.tl-yr{font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:4px;margin-bottom:4px;text-transform:uppercase}
+.tl-txt{color:rgba(254,245,231,.8);font-size:14px;line-height:1.75;font-family:'Cormorant Garamond',serif;font-style:italic}
+
+/* ════════════════════════════════════════
+   PAGE 5 — STARS
+════════════════════════════════════════ */
+#page5{background:#04010a}
+#constellationCanvas{position:absolute;inset:0}
+.p5-wrap{position:relative;z-index:10;text-align:center;padding:28px;max-width:560px}
+.p5-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(28px,5vw,56px);color:var(--cream);opacity:0;animation:fadeUp 1s .3s forwards}
+.p5-title strong{color:var(--blush);font-style:normal}
+.p5-body{color:rgba(242,160,184,.6);font-size:14px;line-height:1.95;margin-top:18px;opacity:0;animation:fadeUp 1s .8s forwards;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px}
+.p5-body span{color:var(--blush)}
+.star-tags{margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeIn 1s 1.4s forwards}
+.star-tag{background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);border-radius:30px;padding:5px 14px;font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;animation:badgePulse 3s ease infinite}
+
+/* ════════════════════════════════════════
+   PAGE 6 — POEM
+════════════════════════════════════════ */
+#page6{background:radial-gradient(ellipse at 50% 30%,#1c0614,var(--deep) 70%)}
+.p6-wrap{position:relative;z-index:10;text-align:center;padding:32px;max-width:560px}
+.p6-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(26px,4vw,44px);color:var(--cream);margin-bottom:26px;opacity:0;animation:fadeUp .9s .2s forwards}
+.p6-title strong{color:var(--blush);font-style:normal}
+.poem-l{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(17px,2.8vw,25px);color:rgba(254,245,231,.85);line-height:2.15;opacity:0;transform:translateY(10px);transition:opacity .75s ease,transform .75s ease}
+.poem-l.vis{opacity:1;transform:none}
+.poem-l.hi{color:var(--blush)}
+.poem-l.gd{color:var(--warm-gold);font-size:clamp(12px,1.8vw,17px);letter-spacing:3px;margin-top:12px}
+.poem-sep{width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent);margin:14px auto;opacity:0;transition:opacity .7s .3s}
+.poem-sep.vis{opacity:1}
+
+/* ════════════════════════════════════════
+   PAGE 7 — ORBIT
+════════════════════════════════════════ */
+#page7{background:radial-gradient(ellipse at 50% 50%,#160418,var(--deep) 70%)}
+.p7-top{position:relative;z-index:10;text-align:center;margin-bottom:8px;opacity:0;animation:fadeUp .9s .3s forwards}
+.p7-top h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(24px,4vw,46px);color:var(--cream)}
+.p7-top h2 em{color:var(--blush);font-style:normal}
+.orbit-scene{position:relative;width:min(460px,86vw);height:min(460px,86vw)}
+.oring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px dashed rgba(192,57,94,.14);transform:translate(-50%,-50%)}
+.ocore{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10}
+.ocore-name{font-family:'Great Vibes',cursive;font-size:clamp(36px,6.5vw,62px);background:linear-gradient(135deg,var(--warm-gold),#ffe8a0,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 22px rgba(212,168,67,.6));animation:heartBeat 3s ease infinite}
+.ocore-sub{font-family:'Cinzel',serif;font-size:9px;color:rgba(242,160,184,.4);letter-spacing:2px;margin-top:4px}
+.oplanet{position:absolute;background:linear-gradient(135deg,rgba(139,26,46,.3),rgba(61,10,26,.4));border:1px solid rgba(192,57,94,.35);border-radius:30px;padding:5px 13px;font-family:'Cinzel',serif;font-size:10px;color:var(--blush);letter-spacing:1px;white-space:nowrap;backdrop-filter:blur(6px);pointer-events:none}
+
+/* ════════════════════════════════════════
+   PAGE 8 — CAKE
+════════════════════════════════════════ */
+#page8{background:radial-gradient(ellipse at 50% 60%,#1c0412,var(--deep) 70%)}
+#confettiCanvas{position:absolute;inset:0;pointer-events:none}
+.p8-wrap{position:relative;z-index:10;text-align:center;padding:20px;width:100%}
+.p8-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(26px,5vw,52px);color:var(--cream);opacity:0;animation:fadeUp .9s .3s forwards}
+.p8-title strong{color:var(--warm-gold);font-style:normal}
+.p8-hint{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:rgba(212,168,67,.4);margin:8px 0 10px;opacity:0;animation:fadeIn 1s .9s forwards;text-transform:uppercase}
+.cake-wrap{display:inline-block;cursor:pointer;position:relative}
+.cake-wrap:hover .cake-svg{filter:drop-shadow(0 0 36px rgba(192,57,94,.8));transform:scale(1.04) translateY(-4px)}
+.cake-svg{transition:all .4s cubic-bezier(.34,1.56,.64,1);filter:drop-shadow(0 0 20px rgba(192,57,94,.5))}
+#smoke-cont{position:absolute;top:============================================================ */
 #nav-dots{display:none}
 .dot{display:none}
 
